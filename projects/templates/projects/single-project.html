@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<img class="singleProject__preview" src="{{ project.featured_image.url }}" />
+<h1>Number: {{project.id}}</h1>
+<br>
+<h1>{{project.title}}</h1>
+<br>
+<hr>
+{% for tag in project.tags.all %}
+<span style="border:1px solid grey">{{tag}}</span>
+{% endfor %}
+<br>
+<p>{{project.description}}
+
+{% endblock %}
