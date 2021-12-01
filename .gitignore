@@ -1,2 +1,7 @@
 /venv
 /templates
+*.pyc
+/__pycache__/
+/devsearch/__pycache__
+.vscode/
+/.vscode/settings.json
