@@ -1,11 +1,15 @@
 from typing import Tuple
 from django.db import models
 import uuid
+from django.db.models.deletion import SET_NULL
 
+from django.db.models.fields.related import ForeignKey
+from users.models import Profile
 
 
 # Create your models here.
 class Project(models.Model):
+    owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=SET_NULL)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     demo_link = models.CharField(max_length=2000, null=True, blank=True)
@@ -25,7 +29,7 @@ class Project(models.Model):
 
 class Review(models.Model):
     VOTE_TYPE = (("up", "Up Vote"), ("down", "Down Vote"))
-    # owner =
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     project = models.ForeignKey(
         Project, on_delete=models.CASCADE
     )  # Will delete all reviews if Project gets deleted
