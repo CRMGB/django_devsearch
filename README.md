@@ -3,7 +3,7 @@
 Render projects, save them, edit them and delete. Upload pictures for each one.
 
 - Requirements:
-    - python 3 or laterpip3 install whitenoise
+    - python 3 or later
     - pip3 (recomended)
     - Django 3 or later (update Django: sudo python3 -m pip install -U Django)
     - virtual environment (to activate it, simply run: . venv/bin/activate)
